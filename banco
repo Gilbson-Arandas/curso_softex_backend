@@ -1,0 +1,31 @@
+class Banco {
+    constructor (conta, saldo, tipoDeConta, agencia) {
+        this.conta = conta;
+        this.saldo = saldo;
+        this.tipoDeConta = tipoDeConta;
+        this.agencia = agencia;
+    }
+
+    retornarSaldo() {
+        return this.saldo;
+    }
+
+    efetuarDeposito(value) {
+        this.saldo += value;
+    }
+
+    efetuarSaque(value) {
+        this.saldo -= value;
+    }
+
+    retornarNumeroConta() {
+        return this.conta
+    }
+}
+
+const cliente = new Banco ('0032.36564-7', 1574.25, 'PJ', '0058')
+console.log(cliente);
+
+cliente.efetuarDeposito(132.41)
+console.log('Novo saldo: R$',cliente.retornarSaldo());
+console.log('Nº da conta: ',cliente.retornarNumeroConta());
